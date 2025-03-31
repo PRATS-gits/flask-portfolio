@@ -1,0 +1,88 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 50% 98%;
+    --foreground: 260 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 30% 15%;
+
+    --primary: 260 60% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 20% 96%;
+    --muted-foreground: 260 10% 55%;
+
+    --accent: 319 81% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 20% 93%;
+    --input: 260 20% 93%;
+    --ring: 260 60% 55%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-lg border border-white/40 shadow-xl;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-portfolio-purple to-portfolio-teal;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-portfolio-purple/90 to-portfolio-teal/90;
+  }
+  
+  .nav-link {
+    @apply relative px-3 py-2 text-foreground/80 hover:text-foreground transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100;
+  }
+
+  .nav-link.active {
+    @apply text-foreground after:scale-x-100;
+  }
+
+  .icon-link {
+    @apply flex items-center justify-center w-12 h-12 rounded-full bg-white/80 hover:bg-white backdrop-blur-sm transition-all duration-300 hover:translate-y-[-5px] text-primary hover:text-accent shadow-md;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 gradient-text;
+  }
+  
+  .skill-card {
+    @apply glass-card p-4 rounded-xl flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg;
+  }
+
+  .project-card {
+    @apply glass-card rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:translate-y-[-5px];
+  }
+
+  .contact-input {
+    @apply w-full p-3 rounded-lg border glass-card focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200;
+  }
+}

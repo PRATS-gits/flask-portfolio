@@ -1,0 +1,28 @@
+# Plan for Converting React+Vite Portfolio to Flask App
+
+## Step 1: Setup Flask Environment ✓
+- Create requirements.txt with Flask and other dependencies ✓
+- Create a .gitignore file for Python-specific files ✓
+
+## Step 2: Create Flask Application Structure ✓
+- Create app.py as the main Flask application file ✓
+- Remove any manually created static/templates folders (not needed) ✓
+
+## Step 3: Build the React Application
+- Run `npm run build` to generate the production build
+- This will automatically:
+  - Compile all TSX files to JavaScript
+  - Bundle all CSS, JS, and assets
+  - Output everything to the 'dist' folder
+
+## Step 4: Configure Flask to Serve the React Build ✓
+- Update the Flask app to serve static files from the 'dist' directory ✓
+- Add a catch-all route to handle React client-side routing ✓
+
+## Step 5: Test the Application
+- Run the Flask application locally
+- Test all pages and functionality
+
+## Step 6: Deployment Considerations
+- Add a Procfile for deployment platforms like Heroku
+- Configure any environment variables needed
